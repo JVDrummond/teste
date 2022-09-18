@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="nav justify-content-center"> 
+  <h1>Cardápio/Produto</h1>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Cardápio</th>
+      <th>Produto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menu_products.each do |menu_product| %>
+      <tr>
+        <td><%= menu_product.menu.description %></td>
+        <td><%= menu_product.product.description %></td>
+
+
+        <td><%= link_to 'Visualizar', menu_product %></td>
+        <td><%= link_to 'Editar', edit_menu_product_path(menu_product) %></td>
+        <td><%= link_to 'Excluir', menu_product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="nav justify-content-center"> 
+  <%= link_to 'Novo Cardápio/produto', new_menu_product_path,class:"btn btn-light" %>
+</div>

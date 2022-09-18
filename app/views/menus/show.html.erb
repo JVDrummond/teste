@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+
+<div class="nav justify-content-center">
+    <h1>Cardápio</h1>
+</div>
+
+<form>
+  <div class="mb-3">  
+    <strong>Description:</strong>
+    <%= text_field_tag nil, @menu.description, class:"form-control", disabled: true%> 
+</form>
+
+<br>
+
+<%= link_to 'Editar', edit_menu_path(@menu), class:"btn btn-light" %> |
+<%= link_to 'Voltar', menus_path, class:"btn btn-light" %>
+
+
+

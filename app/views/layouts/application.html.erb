@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NovoTeste</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+      <div class="container-fluid">     
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <%=link_to 'Página inicial', home_pages_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Pedidos', requests_path, class:"nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Categorias',categories_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Produtos',products_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Cardapio',menus_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Cardapio/produto',menu_products_path, class: "nav-link"%>
+          </li>
+          <li class="nav-item">
+            <%=link_to 'Status',progresses_path, class: "nav-link"%>
+          </li>
+        </ul>
+      
+  
+    <%= yield %>
+    
+  </body>
+</html>

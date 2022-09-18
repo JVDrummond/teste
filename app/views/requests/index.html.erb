@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<div class="nav justify-content-center">
+  <h1>Pedidos</h1>
+  </div>
+
+<div class="nav justify-content-center">  
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Cliente</th>
+        <th>Status</th>
+        <th>Valor</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @requests.each do |request| %>
+        <tr>
+          <td><%= request.requesting_user %></td>
+          <td><%= request.progress.name %></td>
+          <td><%= request.quantity * request.product.preco %></td>
+          <td><%= link_to 'Visualizar', request %></td>
+          <td><%= link_to 'Editar', edit_request_path(request) %></td>
+          <td><%= link_to 'Excluir', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<div class="nav justify-content-center">
+  <%= link_to 'Novo pedido', new_request_path, class:"btn btn-light"%>
+</div>

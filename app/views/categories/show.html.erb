@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+  <div class="mb-3"> 
+    <strong>Nome:</strong>
+    <%= text_field_tag nil, @category.description, class:"form-control", disabled: true %>
+  </div>
+</form>
+
+<%= link_to 'Editar', edit_category_path(@category), class:"btn btn-light" %> |
+<%= link_to 'Voltar', categories_path, class:"btn btn-light" %>
+
+

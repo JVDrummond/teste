@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+
+<div class="nav justify-content-center">
+    <h1>Cardápio/Produto</h1>
+</div>
+
+<form>
+  <div class="mb-3">  
+    <strong>Cardápio:</strong>
+    <%= text_field_tag nil, @menu_options, class:"form-control", disabled: true%> 
+</form>
+<form>
+  <div class="mb-3">  
+    <strong>Produto:</strong>
+    <%= text_field_tag nil, @product_options, class:"form-control", disabled: true%> 
+</form>
+
+<br>
+
+<%= link_to 'Edit', edit_menu_product_path(@menu_product), class:"btn btn-light" %> |
+<%= link_to 'Back', menu_products_path, class:"btn btn-light"%>

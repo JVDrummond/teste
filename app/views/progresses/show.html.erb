@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<br>
+<div class="nav justify-content-center">
+ <h1>Status</h1>
+</div>
+
+<form>
+  <div class="mb-3">  
+    <strong>Nome: </strong>
+    <%= text_field_tag nil, @progress.name, class:"form-control", disabled: true%>
+  </div>
+</form>
+
+<%= link_to 'Edit', edit_progress_path(@progress), class:"btn btn-light" %> |
+<%= link_to 'Back', progresses_path, class:"btn btn-light" %>

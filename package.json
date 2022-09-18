@@ -1,0 +1,8 @@
+{
+  "name": "novo_teste",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "popper.js": "^1.16.1"
+  }
+}

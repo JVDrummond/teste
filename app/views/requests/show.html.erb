@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<br>
+<div class="nav justify-content-center">
+    <h1>Pedido</h1>
+</div>
+
+<form> 
+    <div class="mb-3"> 
+      <strong>Cliente:</strong>
+      <%= text_field_tag nil, @request.requesting_user, class:"form-control", disabled: true%>
+    </div>
+
+   <div class="mb-3"> 
+      <strong>Produto(s):</strong>
+      <%= text_field_tag nil, @request.product.description, class:"form-control", disabled: true%>
+    </div>
+  
+    <div class="mb-3"> 
+      <strong>Quantidade:</strong>
+      <%= text_field_tag nil, @request.quantity, class:"form-control", disabled: true%>
+    </div>
+ 
+    <div class="mb-3"> 
+      <strong>Preço:</strong>
+      <%= text_field_tag nil, @request.quantity * @request.product.preco, class:"form-control", disabled: true%>
+    </div>
+</form>
+
+<%= link_to 'Voltar', requests_path, class:"btn btn-light"%> |
+<%= link_to 'Página inicial', home_pages_path, class:"btn btn-light"%>

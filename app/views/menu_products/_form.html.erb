@@ -1,0 +1,31 @@
+<%= form_with(model: menu_product, local: true) do |form| %>
+  <% if menu_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(menu_product.errors.count, "error") %> prohibited this menu_product from being saved:</h2>
+
+      <ul>
+      <% menu_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="form-group">
+    <%= form.label :menu_id %>
+    <%= form.select("menu_id", @menu_options, {include_blank: "selecione..."}, class:"form-control") %>
+  </div>
+
+  <br>
+
+  <div class="form-group">
+    <%= form.label :product_id %>
+    <%= form.select("product_id", @product_options, {include_blank: "selecione..."}, class:"form-control")%>
+  </div>
+  
+  <br>
+
+  <div class="actions">
+    <%= form.submit ("Finalizar cardápio"), class:"btn btn-light"%>
+  </div>
+<% end %>

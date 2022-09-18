@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="nav justify-content-center">
+    <h1>Produto</h1>
+</div>
+
+<form>
+  <div class="mb-3">  
+    <strong>Nome: </strong>
+    <%= text_field_tag nil, @product.description, class:"form-control", disabled: true%>
+  </div>
+  <div class="mb-3">  
+    <strong>Ativo: </strong>
+    <%= text_field_tag nil, @product.ativo, class:"form-control", disabled: true%>
+  </div>
+  <div class="mb-3">  
+    <strong>Preço: </strong>
+    <%= text_field_tag nil, @product.preco, class:"form-control", disabled: true%>
+  </div>
+</form>
+    
+
+<%= link_to 'Editar', edit_product_path(@product), class:"btn btn-light" %> |
+<%= link_to 'Voltar', products_path, class:"btn btn-light" %>
+
+
+

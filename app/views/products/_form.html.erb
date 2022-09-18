@@ -1,0 +1,42 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  <div class="mb-3">
+    <%= form.label :description %>
+    <%= form.text_field :description, class:"form-control", placeholder:"Nome"%>
+  </div>
+
+  <div class="mb-3"">
+    <%= form.label :preco %>
+    <%= form.text_field :preco, class:"form-control", placeholder:"R$" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :category_id %>
+    <%= form.select("category_id", @category_options, {include_blank: "selecione..."}, class:"form-control") %>
+  </div>
+
+  <br>
+
+  <div class="mb-3">
+    <%= form.label :ativo %>
+    <br>
+    <%= form.check_box :ativo %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit  ("Atualizar produto"), class:"btn btn-light" %>
+  </div>
+
+<% end %>
